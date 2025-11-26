@@ -22,10 +22,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, isDarkMode, toggleTheme 
     const cleanPassword = password.trim();
 
     // Get credentials from environment variables (fallback to defaults for development)
-    const adminUser = import.meta.env.VITE_ADMIN_USERNAME || 'admin';
-    const adminPass = import.meta.env.VITE_ADMIN_PASSWORD || 'admin';
-    const userUser = import.meta.env.VITE_USER_USERNAME || 'user';
-    const userPass = import.meta.env.VITE_USER_PASSWORD || 'user';
+    const adminUser = process.env.NEXT_PUBLIC_ADMIN_USERNAME || 'admin';
+    const adminPass = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin';
+    const userUser = process.env.NEXT_PUBLIC_USER_USERNAME || 'user';
+    const userPass = process.env.NEXT_PUBLIC_USER_PASSWORD || 'user';
 
     // Check credentials
     if (cleanUsername === adminUser.toLowerCase() && cleanPassword === adminPass) {
